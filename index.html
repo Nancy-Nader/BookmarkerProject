@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="fontawesome-free-6.6.0-web/css/all.min.css">
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="py-5 d-flex align-items-center justify-content-center flex-column">
+                <div class="title position-relative">
+                    <h1>Bookmarker</h1>
+                </div>
+            </div>
+            <div class="form py-5">
+                <div class="subtitle d-flex align-items-baseline justify-content-center">
+                    <i class="fa-solid fa-bookmark fa-xl" style="color: #3fa55b;"></i>
+                    <h2>Bookmark your favorite sites</h2>
+                    <i class="fa-solid fa-bookmark fa-xl" style="color: #b3ac4a;"></i>
+                </div>
+                <div class="mb-3">
+                    <i class="fa-solid fa-book-bookmark"></i>
+                    <label for="exampleFormControlInput1" class="form-label">Site Name</label>
+                    <input oninput="validate(this)"
+                     type="text" class="form-control" id="siteName" placeholder="Bookmark Name" required>
+                    <span class=" text-danger d-none">Site name must contain at least 3 characters</span>
+                </div>
+                <div class="mb-3">
+                    <i class="fa-solid fa-link"></i>
+                    <label for="exampleFormControlInput1" class="form-label">Site URL</label>
+                    <input oninput="validate(this)"
+                     type="url" class="form-control" id="siteURL" placeholder="Website URL" required>
+                     <span class=" text-danger d-none">Site URL must matches with this URL "Https://www.example.com"</span>
+                </div>
+                <div class="button d-flex justify-content-center">
+                    <button onclick="addSite()" type="button" class="btn btn-color btn-sm px-5 py-2">Submit</button>
+                </div>
+            </div>
+            <div id="table">
+                <table class="table mt-4 text-center bg-light">
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Website Name</th>
+                            <th>Visit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableContent">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
